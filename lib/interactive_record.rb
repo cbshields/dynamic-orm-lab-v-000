@@ -53,10 +53,10 @@ class InteractiveRecord
     DB[:conn].execute(sql)
   end
 
-  def self.find_by(attr)
-    attr.each do |key,value|
-      col_name = "#{key.to_s}"
-      sql = "SELECT * FROM #{self.table_name} WHERE #{col_name} = '#{value}'"
+  def self.find_by(attributes)
+    
+      binding.pry
+      sql = "SELECT * FROM #{self.table_name} WHERE #{attributes.keys.first} = '#{value}'"
       DB[:conn].execute(sql)
     end
   end
